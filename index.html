@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salphael Guest House – Rayfield, Jos</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container flex between align-center">
+      <a class="brand" href="#home"><span class="brand-name">Salphael Guest House</span></a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#reserve" class="btn btn-primary small">Reserve</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Space, Comfort & Peace—right in Rayfield, Jos.</h1>
+          <p class="lead">A modern 5‑bedroom retreat with two living lounges, solar power backup, full kitchen & kitchenette, and 24/7 security—just after Rayfield Golf Course.</p>
+          <div class="cta-row">
+            <a href="#reserve" class="btn btn-primary">Reserve Now</a>
+            <a href="#gallery" class="btn btn-ghost">View Gallery</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <strong>Rayfield • Jos</strong>
+            <span>After Rayfield Golf Course, before Riverside</span>
+          </div>
+          <div class="stat">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/2348146144201" target="_blank" rel="noopener">+234 814 614 4201</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container grid two">
+      <div>
+        <h2>Welcome to Salphael</h2>
+        <p>Salphael Guest House is your home-away-from-home in Rayfield, Jos.</p>
+      </div>
+    </section>
+
+    <section id="amenities" class="section container">
+      <h2>Amenities</h2>
+      <div class="grid three">
+        <div class="amenity"><span>⚡</span>Reliable solar backup</div>
+        <div class="amenity"><span>🍽️</span>Kitchen & kitchenette</div>
+        <div class="amenity"><span>🔒</span>24/7 security</div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section light">
+      <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <img src="assets/gallery-1.jpg" alt="Living lounge" />
+          <img src="assets/gallery-2.jpg" alt="Bedroom" />
+          <img src="assets/gallery-3.jpg" alt="Kitchen" />
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="section container">
+      <h2>Location</h2>
+      <p>After Rayfield Golf Course, before Riverside—Rayfield, Jos, Nigeria.</p>
+      <div class="map-card">
+        <iframe title="Map to Salphael Guest House" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Rayfield+Golf+Course,+Jos&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Availability section injected by script -->
+    <section id="reserve" class="section reserve">
+      <div class="container">
+        <h2>Reserve Your Stay</h2>
+        <p class="lead">Send us your reservation request and we’ll confirm promptly. Your request is also emailed to us via Formspree.</p>
+        <form id="bookingForm" class="booking-form" onsubmit="return submitReservation(event)">
+          <div class="grid three">
+            <label>Full Name
+              <input type="text" name="name" required placeholder="Your full name" />
+            </label>
+            <label>Phone (WhatsApp preferred)
+              <input type="tel" name="phone" required placeholder="+234…" />
+            </label>
+            <label>Email (optional)
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+            <label>Check‑in
+              <input type="date" name="checkin" required />
+            </label>
+            <label>Check‑out
+              <input type="date" name="checkout" required />
+            </label>
+            <label>Guests
+              <input type="number" name="guests" min="1" max="12" value="2" required />
+            </label>
+            <label>Bedrooms Needed
+              <input type="number" name="bedrooms" min="1" max="5" value="3" required />
+            </label>
+            <label>Special Requests
+              <input type="text" name="notes" placeholder="e.g., airport pickup, early check-in" />
+            </label>
+          </div>
+          <div class="cta-row">
+            <button type="submit" class="btn btn-primary">Reserve via WhatsApp</button>
+          </div>
+          <p class="tiny">By submitting, your browser opens WhatsApp with a pre‑filled message to +234 814 614 4201 and emails us (Formspree).</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container flex between align-start">
+      <div>
+        <strong>Salphael Guest House</strong>
+        <p>Rayfield, Jos • Nigeria</p>
+        <p><a href="https://wa.me/2348146144201" target="_blank" rel="noopener">+234 814 614 4201</a></p>
+      </div>
+    </div>
+    <p class="tiny center">© <span id="year"></span> Salphael Guest House. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
