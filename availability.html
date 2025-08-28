@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Availability – Salphael Guest House</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-</head>
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html"><img src="assets/logo.svg" class="logo" alt=""><span class="brand-name">Salphael Guest House</span></a>
-    <nav class="nav"><a class="nav-link" href="index.html">Home</a>
+<link rel="stylesheet" href="styles.css"/><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"></head>
+<body><header class="site-header"><div class="container header-inner">
+<a class="brand" href="index.html"><img src="assets/logo.svg" class="logo" alt=""><span class="brand-name">Salphael Guest House</span></a>
+<nav class="nav"><a class="nav-link" href="index.html">Home</a>
 <a class="nav-link" href="about.html">About</a>
 <a class="nav-link" href="rooms.html">Rooms</a>
 <a class="nav-link" href="amenities.html">Amenities</a>
 <a class="nav-link" href="gallery.html">Gallery</a>
 <a class="nav-link active" href="availability.html">Availability</a>
 <a class="nav-link" href="location.html">Location</a>
-<a class="nav-link" href="reserve.html">Reserve</a></nav>
-    <a class="btn btn-cta" href="reserve.html">Book Now</a>
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
-  </div>
-</header>
+<a class="nav-link" href="reserve.html">Reserve</a></nav><a class="btn btn-cta" href="reserve.html">Book Now</a>
+<button class="menu-toggle" aria-label="Open menu">☰</button></div></header>
 <div class="mobile-drawer" id="drawer"><nav><a class="nav-link" href="index.html">Home</a>
 <a class="nav-link" href="about.html">About</a>
 <a class="nav-link" href="rooms.html">Rooms</a>
@@ -33,34 +24,17 @@
 <a class="nav-link" href="reserve.html">Reserve</a><a class="btn btn-cta block mt8" href="reserve.html">Book Now</a></nav></div>
 <main class="page">
 <section class="banner lime"><div class="container"><h1>Availability</h1><p>See unavailable dates from our Google Sheet.</p></div></section>
-<section class="container section">
-  <div class="calendar-wrap">
-    <div class="cal-header">
-      <button class="btn small" id="prevMonth" aria-label="Previous month">←</button>
-      <h3 id="calTitle" class="cal-title">Availability</h3>
-      <button class="btn small" id="nextMonth" aria-label="Next month">→</button>
-    </div>
-    <div id="calendar" class="calendar"></div>
-    <div class="cal-legend"><span class="badge free">Available</span><span class="badge blocked">Unavailable</span><span class="badge today">Today</span></div>
-  </div>
-  <p class="tiny">Admin: update blocked dates in Google Sheets; the site pulls JSON from your Apps Script endpoint.</p>
-</section>
-</main>
-<footer class="site-footer">
-  <div class="container foot-grid">
-    <div>
-      <div class="brand foot"><img src="assets/logo.svg" class="logo small" alt=""><strong>Salphael Guest House</strong></div>
-      <p>Rayfield, Jos • Nigeria</p>
-      <p><a href="https://wa.me/2348146144201" target="_blank" rel="noopener">+234 814 614 4201</a></p>
-    </div>
-    <div>
-      <strong>Explore</strong>
-      <div class="foot-links">
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="rooms.html">Rooms</a><a href="amenities.html">Amenities</a><a href="gallery.html">Gallery</a><a href="availability.html">Availability</a><a href="location.html">Location</a><a href="reserve.html">Reserve</a>
-      </div>
-    </div>
-  </div>
-  <p class="tiny center">© <span id="year"></span> Salphael Guest House. All rights reserved.</p>
-</footer>
-<script src="script.js"></script>
-</body></html>
+<section class="container section"><div class="calendar-wrap">
+<div class="cal-header"><button class="btn small" id="prevMonth" aria-label="Previous month">←</button>
+<h3 id="calTitle" class="cal-title">Availability</h3><button class="btn small" id="nextMonth" aria-label="Next month">→</button></div>
+<div id="calendar" class="calendar"></div>
+<div class="cal-legend"><span class="badge free">Available</span><span class="badge blocked">Unavailable</span><span class="badge today">Today</span></div>
+</div><p class="tiny">Admin: update blocked dates in Google Sheets; the site pulls JSON from your Apps Script endpoint.</p></section>
+</main><footer class="site-footer"><div class="container foot-grid">
+<div><div class="brand foot"><img src="assets/logo.svg" class="logo small" alt=""><strong>Salphael Guest House</strong></div>
+<p>Rayfield, Jos • Nigeria</p><p><a href="https://wa.me/2348146144201" target="_blank" rel="noopener">+234 814 614 4201</a></p></div>
+<div><strong>Explore</strong><div class="foot-links">
+<a href="index.html">Home</a><a href="about.html">About</a><a href="rooms.html">Rooms</a><a href="amenities.html">Amenities</a>
+<a href="gallery.html">Gallery</a><a href="availability.html">Availability</a><a href="location.html">Location</a><a href="reserve.html">Reserve</a>
+</div></div></div><p class="tiny center">© <span id="year"></span> Salphael Guest House. All rights reserved.</p></footer>
+<script src="script.js"></script></body></html>
