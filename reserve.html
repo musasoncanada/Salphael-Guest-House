@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home – Salphael Guest House</title>
+<title>Reserve – Salphael Guest House</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -11,50 +11,43 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html"><img src="assets/logo.svg" class="logo" alt=""><span class="brand-name">Salphael Guest House</span></a>
-    <nav class="nav"><a class="nav-link active" href="index.html">Home</a>
+    <nav class="nav"><a class="nav-link" href="index.html">Home</a>
 <a class="nav-link" href="about.html">About</a>
 <a class="nav-link" href="rooms.html">Rooms</a>
 <a class="nav-link" href="amenities.html">Amenities</a>
 <a class="nav-link" href="gallery.html">Gallery</a>
 <a class="nav-link" href="availability.html">Availability</a>
 <a class="nav-link" href="location.html">Location</a>
-<a class="nav-link" href="reserve.html">Reserve</a></nav>
+<a class="nav-link active" href="reserve.html">Reserve</a></nav>
     <a class="btn btn-cta" href="reserve.html">Book Now</a>
     <button class="menu-toggle" aria-label="Open menu">☰</button>
   </div>
 </header>
-<div class="mobile-drawer" id="drawer"><nav><a class="nav-link active" href="index.html">Home</a>
+<div class="mobile-drawer" id="drawer"><nav><a class="nav-link" href="index.html">Home</a>
 <a class="nav-link" href="about.html">About</a>
 <a class="nav-link" href="rooms.html">Rooms</a>
 <a class="nav-link" href="amenities.html">Amenities</a>
 <a class="nav-link" href="gallery.html">Gallery</a>
 <a class="nav-link" href="availability.html">Availability</a>
 <a class="nav-link" href="location.html">Location</a>
-<a class="nav-link" href="reserve.html">Reserve</a><a class="btn btn-cta block mt8" href="reserve.html">Book Now</a></nav></div>
+<a class="nav-link active" href="reserve.html">Reserve</a><a class="btn btn-cta block mt8" href="reserve.html">Book Now</a></nav></div>
 <main class="page">
-<section class="hero gradient">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <h1>Colorful comfort in Rayfield, Jos.</h1>
-      <p class="lead">A bright, welcoming 5‑bedroom home with two lounges, solar backup, full kitchen & kitchenette, and 24/7 security — just after Rayfield Golf Course.</p>
-      <div class="cta-row"><a class="btn btn-cta" href="reserve.html">Reserve Now</a><a class="btn btn-ghost" href="gallery.html">View Gallery</a></div>
-      <ul class="chips"><li>5 Bedrooms</li><li>2 Lounges</li><li>Solar Backup</li><li>24/7 Security</li></ul>
-    </div>
-    <div class="hero-card card">
-      <h3>Quick Contact</h3>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348146144201" target="_blank">+234 814 614 4201</a></p>
-      <p><strong>Location:</strong> After Rayfield Golf Course, before Riverside</p>
-      <a class="btn block" href="availability.html">Check Availability</a>
-    </div>
-  </div>
-</section>
+<section class="banner gold"><div class="container"><h1>Reserve Your Stay</h1><p>We’ll confirm promptly via WhatsApp & email.</p></div></section>
 <section class="container section">
-  <h2 class="center">Why guests love Salphael</h2>
-  <div class="grid three">
-    <div class="card"><h3>Space</h3><p>Entire 1‑storey home with five bedrooms and two airy lounges.</p></div>
-    <div class="card"><h3>Convenience</h3><p>Cook your way with a full kitchen + kitchenette. Easy road access.</p></div>
-    <div class="card"><h3>Reliability</h3><p>Solar power backup and 24/7 security for peace of mind.</p></div>
-  </div>
+  <form id="bookingForm" class="booking-form" onsubmit="return submitReservation(event)">
+    <div class="grid three">
+      <label>Full Name<input type="text" name="name" required placeholder="Your full name"></label>
+      <label>Phone (WhatsApp preferred)<input type="tel" name="phone" required placeholder="+234…"></label>
+      <label>Email (optional)<input type="email" name="email" placeholder="you@example.com"></label>
+      <label>Check‑in<input type="date" name="checkin" required></label>
+      <label>Check‑out<input type="date" name="checkout" required></label>
+      <label>Guests<input type="number" name="guests" min="1" max="12" value="2" required></label>
+      <label>Bedrooms Needed<input type="number" name="bedrooms" min="1" max="5" value="3" required></label>
+      <label>Special Requests<input type="text" name="notes" placeholder="e.g., airport pickup"></label>
+    </div>
+    <div class="cta-row"><button type="submit" class="btn btn-cta">Reserve via WhatsApp</button></div>
+    <p class="tiny">Submitting opens WhatsApp to +234 814 614 4201 and also emails us via Formspree.</p>
+  </form>
 </section>
 </main>
 <footer class="site-footer">
