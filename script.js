@@ -3,7 +3,7 @@ const yearSpan=document.getElementById('year'); if(yearSpan) yearSpan.textConten
 const toggle=document.querySelector('.menu-toggle'), drawer=document.getElementById('drawer'); if(toggle&&drawer){toggle.addEventListener('click',()=>drawer.classList.toggle('open'));}
 
 // Availability via Google Apps Script
-let AVAIL_API = 'PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+let AVAIL_API = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgMe-Nak29ayJl_NJ_QaHbm7hVVmecuzQaXiM2k6ZP7mOdEfvD1upd0r-GqdyX1QmTftQ_bql32KhfDXk7MDSIZ4A1Jkj4BFgCJaHoiM6L5dZgH1HHtVXGckTRB3mFCMloE7sHA3IGIRgXuB-SxGmr-MffyA2pjVUaPo1r5Yb5dWkfeA6gZBpwIoZam8v12Qd67hn-fchG9ErSQl73QmCmhcR4mRif9mM363T9bj2I9kDcFoZs2j0jVhxDiedhkakhuGB0kLe8LZlI0PBtNOsOPFR9oHA&lib=MOui0lULrpOxQVN1t84WAQzKgCMnDg4Op';
 // Optional: allow quick setup via URL param (?avail=EXEC_URL) or localStorage
 (function(){try{const u=new URL(location.href);const p=u.searchParams.get('avail');if(p){localStorage.setItem('Salphael_AVAIL_API',p);}const s=localStorage.getItem('Salphael_AVAIL_API');if(s){AVAIL_API=s;}}catch(e){}})();
 let BLOCKED_DATES=[];
