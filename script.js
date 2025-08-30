@@ -5,7 +5,7 @@ function days(a,b){const ms=86400000; if(!a||!b) return 0; return Math.max(0,Mat
 function updateEstimate(){const f=document.getElementById('bookingForm'); if(!f) return; const n=days(f.checkin.value,f.checkout.value); const r=RATE_MAP[f.room_type.value]||0; const t=n*r; const out=document.getElementById('est_total'); if(out) out.textContent='₦'+t.toLocaleString();}
 document.addEventListener('input',updateEstimate);document.addEventListener('change',updateEstimate);document.addEventListener('DOMContentLoaded',updateEstimate);
 // mini availability calendar (home)
-const AVAILABILITY_ENDPOINT = https://script.google.com/macros/s/AKfycbyZnuRqo-kE86h-XzPeHg5euKEDRVhR1i85LizHkhjOGzTzxbF1A8IYDqfMC5U019jM/exec
+const AVAILABILITY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyZnuRqo-kE86h-XzPeHg5euKEDRVhR1i85LizHkhjOGzTzxbF1A8IYDqfMC5U019jM/exec;
 function formatMonth(y,m){return new Date(y,m,1).toLocaleString(undefined,{month:'long',year:'numeric'});}
 function daysInMonth(y,m){return new Date(y,m+1,0).getDate();}
 function renderMonth(container, y, m, blockedSet){
