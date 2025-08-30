@@ -5,7 +5,7 @@ function days(a,b){const ms=86400000; if(!a||!b) return 0; return Math.max(0,Mat
 function updateEstimate(){const f=document.getElementById('bookingForm'); if(!f) return; const n=days(f.checkin.value,f.checkout.value); const r=RATE_MAP[f.room_type.value]||0; const t=n*r; const out=document.getElementById('est_total'); if(out) out.textContent='₦'+t.toLocaleString();}
 document.addEventListener('input',updateEstimate);document.addEventListener('change',updateEstimate);document.addEventListener('DOMContentLoaded',updateEstimate);
 // mini availability calendar (home)
-const AVAILABILITY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyZnuRqo-kE86h-XzPeHg5euKEDRVhR1i85LizHkhjOGzTzxbF1A8IYDqfMC5U019jM/exec;
+const AVAILABILITY_ENDPOINT = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLgMe-Nak29ayJl_NJ_QaHbm7hVVmecuzQaXiM2k6ZP7mOdEfvD1upd0r-GqdyX1QmTftQ_bql32KhfDXk7MDSIZ4A1Jkj4BFgCJaHoiM6L5dZgH1HHtVXGckTRB3mFCMloE7sHA3IGIRgXuB-SxGmr-MffyA2pjVUaPo1r5Yb5dWkfeA6gZBpwIoZam8v12Qd67hn-fchG9ErSQl73QmCmhcR4mRif9mM363T9bj2I9kDcFoZs2j0jVhxDiedhkakhuGB0kLe8LZlI0PBtNOsOPFR9oHA&lib=MOui0lULrpOxQVN1t84WAQzKgCMnDg4Op';
 function formatMonth(y,m){return new Date(y,m,1).toLocaleString(undefined,{month:'long',year:'numeric'});}
 function daysInMonth(y,m){return new Date(y,m+1,0).getDate();}
 function renderMonth(container, y, m, blockedSet){
