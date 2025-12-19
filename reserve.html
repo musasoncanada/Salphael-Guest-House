@@ -24,18 +24,81 @@
 <a class="nav-link active"<a href="reserve.html" class="btn btn-cta">Reserve</a>">Book Now</a></nav></div>
 <main class="page">
 <section class="banner gold"><div class="container"><h1>Reserve Your Stay</h1><p>We’ll confirm promptly via WhatsApp & email.</p></div></section>
-<section class="container section"><form id="bookingForm" class="booking-form" onsubmit="return submitReservation(event)">
-<div class="grid three">
-<label>Full Name<input type="text" name="name" required placeholder="Your full name"></label>
-<label>Phone (WhatsApp preferred)<input type="tel" name="phone" required placeholder="+234…"></label>
-<label>Email (optional)<input type="email" name="email" placeholder="you@example.com"></label>
-<label>Check‑in<input type="date" name="checkin" required></label>
-<label>Check‑out<input type="date" name="checkout" required></label>
-<label>Guests<input type="number" name="guests" min="1" max="12" value="2" required></label>
-<label>Room / Suite<input type="number" name="bedrooms" min="1" max="5" value="3" required></label>
-<label>Special Requests<input type="text" name="notes" placeholder="e.g., airport pickup"></label>
-</div><div class="cta-row"><button type="submit" class="btn btn-cta">Reserve</button></div>
-<p class="tiny">.</p></form></section>
+<section class="container section">
+  <form
+  id="reservationForm"
+  class="booking-form"
+  action="https://formspree.io/f/mwpnveej"
+  method="POST"
+>
+  <div class="grid three">
+
+    <label>
+      Full Name
+      <input type="text" name="name" required placeholder="Your full name">
+    </label>
+
+    <label>
+      Phone Number
+      <input type="tel" name="phone" placeholder="+234…">
+    </label>
+
+    <label>
+      Email Address
+      <input type="email" name="email" required placeholder="you@example.com">
+    </label>
+
+    <label>
+      Check-in
+      <input type="date" name="checkin" required>
+    </label>
+
+    <label>
+      Check-out
+      <input type="date" name="checkout" required>
+    </label>
+
+    <label>
+      Number of Guests
+      <input type="number" name="guests" min="1" max="12" value="2" required>
+    </label>
+
+    <label>
+      Room / Suite
+      <select name="room" required>
+        <option value="">Select room type</option>
+        <option>Standard Room – ₦40,000</option>
+        <option>Deluxe Room – ₦60,000</option>
+        <option>Family Suite (Downstairs) – ₦100,000</option>
+        <option>Family Suite (Upstairs) – ₦120,000</option>
+      </select>
+    </label>
+
+    <label>
+      Special Requests
+      <input type="text" name="notes" placeholder="Airport pickup, early check-in, etc.">
+    </label>
+
+  </div>
+
+  <div class="cta-row">
+    <button type="submit" class="btn btn-cta">Submit Reservation</button>
+  </div>
+</form>
+
+<div id="formSuccess" class="success-box" style="display:none;">
+  <h3>Reservation Received ✅</h3>
+  <p>
+    Thank you for choosing <strong>Salphael Guest House</strong>.<br>
+    We’ve received your reservation and will contact you shortly by email or phone.
+  </p>
+
+  <p class="tiny">
+    Prefer instant response?
+    <a href="https://wa.me/2348146144201" target="_blank">Chat with us on WhatsApp</a>
+  </p>
+</div>
+</form></section>
 </main><footer class="site-footer"><div class="container foot-grid">
 <div><div class="brand foot"><img src="assets/logo.svg" class="logo small" alt=""><strong>Salphael Guest House</strong></div>
 <p>Rayfield, Jos • Nigeria</p><p><<a href="reserve.html" class="btn btn-cta">Reserve</a> target="_blank" rel="noopener">+234 803 584 7866</a></p></div>
