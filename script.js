@@ -1,4 +1,4 @@
-const AVAILABILITY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyZnuRqo-kE86h-XzPeHg5euKEDRVhR1i85LizHkhjOGzTzxbF1A8IYDqfMC5U019jM/exec';
+const AVAILABILITY_ENDPOINT = "https://script.google.com/macros/s/AKfycbwUa4ILpm3lWizeoamDiCpAYzpq6oPIFfZtgfm-XjXQ574dAsrLxY9uvirfniaUG0T9Wg/exec";
 
 function parseYMD(s){
   // Avoid timezone shift from new Date('YYYY-MM-DD') which is parsed as UTC in many browsers
