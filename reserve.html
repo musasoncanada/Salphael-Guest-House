@@ -85,6 +85,7 @@
     <button type="submit" class="btn btn-cta">Submit Reservation</button>
   </div>
 </form>
+</body>
 
 <div id="formSuccess" class="success-box" style="display:none;">
   <h3>Reservation Received ✅</h3>
@@ -98,7 +99,31 @@
     <a href="https://wa.me/2348146144201" target="_blank">Chat with us on WhatsApp</a>
   </p>
 </div>
-</form></section>
+</form>
+<script>
+const form = document.getElementById("reservationForm");
+const successBox = document.getElementById("formSuccess");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { "Accept": "application/json" }
+  }).then(response => {
+    if (response.ok) {
+      form.style.display = "none";
+      successBox.style.display = "block";
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+});
+</script>
+
+</section>
 </main><footer class="site-footer"><div class="container foot-grid">
 <div><div class="brand foot"><img src="assets/logo.svg" class="logo small" alt=""><strong>Salphael Guest House</strong></div>
 <p>Rayfield, Jos • Nigeria</p><p><<a href="reserve.html" class="btn btn-cta">Reserve</a> target="_blank" rel="noopener">+234 803 584 7866</a></p></div>
