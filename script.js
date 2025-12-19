@@ -1,4 +1,6 @@
-const AVAILABILITY_ENDPOINT = "https://script.google.com/macros/s/AKfycbwUa4ILpm3lWizeoamDiCpAYzpq6oPIFfZtgfm-XjXQ574dAsrLxY9uvirfniaUG0T9Wg/exec";
+// Google Apps Script endpoint that serves JSON like:
+// { updated: "...", blocked: ["YYYY-MM-DD", ...] }
+const AVAILABILITY_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwUa4ILpm3lWizeoamDiCpAYzpq6oPIFfZtgfm-XjXQ574dAsrLxY9uvirfniaUG0T9Wg/exec';
 
 function parseYMD(s){
   // Avoid timezone shift from new Date('YYYY-MM-DD') which is parsed as UTC in many browsers
@@ -20,12 +22,21 @@ const yearSpan=document.getElementById('year'); if(yearSpan) yearSpan.textConten
 const toggle=document.querySelector('.menu-toggle'), drawer=document.getElementById('drawer'); if(toggle&&drawer){toggle.addEventListener('click',()=>drawer.classList.toggle('open'));}
 
 // Availability via Google Apps Script
-let AVAIL_API = 'https://script.google.com/macros/s/AKfycbyZnuRqo-kE86h-XzPeHg5euKEDRVhR1i85LizHkhjOGzTzxbF1A8IYDqfMC5U019jM/exec';
+let AVAIL_API = 'https://script.google.com/macros/s/AKfycbwUa4ILpm3lWizeoamDiCpAYzpq6oPIFfZtgfm-XjXQ574dAsrLxY9uvirfniaUG0T9Wg/exec';
 // Optional: allow quick setup via URL param (?avail=EXEC_URL) or localStorage
 (function(){try{const u=new URL(location.href);const p=u.searchParams.get('avail');if(p){localStorage.setItem('Salphael_AVAIL_API',p);}const s=localStorage.getItem('Salphael_AVAIL_API');if(s){AVAIL_API=s;}}catch(e){}})();
 let BLOCKED_DATES=[];
-async function loadBlockedDates(){ if(!document.getElementById('calendar')) return; try{ const r=await fetch(AVAIL_API,{cache:'no-store'}); const d=await r.json(); BLOCKED_DATES=Array.isArray(d.blocked)?d.blocked:[]; }catch(e){ console.warn('Availability API error', e); BLOCKED_DATES=[]; }}
-function ymd(d){return ymd(d);}
+async function loadBlockedDates(){
+  if(!document.getElementById('calendar')) return;
+  try{
+    const r=await fetch(AVAIL_API,{cache:'no-store'});
+    const d=await r.json();
+    BLOCKED_DATES=Array.isArray(d.blocked)?d.blocked:[];
+  }catch(e){
+    console.warn('Availability API error', e);
+    BLOCKED_DATES=[];
+  }
+}
 async function buildCalendar(){ await loadBlockedDates(); const cal=document.getElementById('calendar'); const title=document.getElementById('calTitle'); if(!cal) return; let cursor=new Date(); cursor.setDate(1);
   function render(){ cal.innerHTML=''; const y=cursor.getFullYear(), m=cursor.getMonth(); if(title) title.textContent=cursor.toLocaleString(undefined,{month:'long',year:'numeric'});
     const heads=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; for(const h of heads){const el=document.createElement('div'); el.className='head'; el.textContent=h; cal.appendChild(el);}
