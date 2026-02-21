@@ -111,3 +111,84 @@ async function loadMiniCalendar(){
   }
 }
 document.addEventListener('DOMContentLoaded', loadMiniCalendar);
+// --- Salphael WhatsApp (site-wide) ---
+(function () {
+  const WA_URL =
+    "https://api.whatsapp.com/send?phone=2349021173726&text=Hello%20Salphael%20Guest%20House.%20I%20would%20like%20to%20book%20a%20room.%20Please%20send%20availability%20and%20rates.";
+
+  // Update all WhatsApp links on the page (footer, contact cards, etc.)
+  document.querySelectorAll('a[href*="wa.me/"], a[href*="api.whatsapp.com/send"], a[href*="whatsapp.com/send"]').forEach(a => {
+    a.href = WA_URL;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  // Update any visible phone text if it matches old numbers
+  document.querySelectorAll("a").forEach(a => {
+    const t = (a.textContent || "").replace(/\s+/g, " ").trim();
+    if (t.includes("+234 803 584 7866") || t.includes("+234 814 614 4201")) {
+      a.textContent = "+234 902 117 3726";
+    }
+  });
+
+  // Add floating WhatsApp button site-wide (if not already present)
+  if (!document.querySelector(".whatsapp-float")) {
+    const btn = document.createElement("a");
+    btn.className = "whatsapp-float";
+    btn.href = WA_URL;
+    btn.target = "_blank";
+    btn.rel = "noopener";
+    btn.setAttribute("aria-label", "Book on WhatsApp");
+    btn.innerHTML = `<span class="wa-icon" aria-hidden="true">🟢</span> Book on WhatsApp`;
+    document.body.appendChild(btn);
+  }
+
+  // Add button styles once
+  if (!document.getElementById("wa-float-style")) {
+    const style = document.createElement("style");
+    style.id = "wa-float-style";
+    style.textContent = `
+      .whatsapp-float{
+        position:fixed;
+        right:18px;
+        bottom:18px;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:12px 16px;
+        border-radius:999px;
+        background:#25D366;
+        color:#fff;
+        font-family: Inter, Arial, sans-serif;
+        font-weight:700;
+        text-decoration:none;
+        box-shadow:0 10px 25px rgba(0,0,0,.18);
+        z-index:9999;
+        transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      }
+      .whatsapp-float:hover{
+        transform:translateY(-2px);
+        box-shadow:0 14px 30px rgba(0,0,0,.22);
+        background:#1ebe5d;
+      }
+      .wa-icon{
+        width:22px;
+        height:22px;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        font-size:18px;
+        line-height:1;
+      }
+      @media (max-width:520px){
+        .whatsapp-float{
+          right:12px;
+          bottom:12px;
+          padding:12px 14px;
+          font-size:14px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+})();
