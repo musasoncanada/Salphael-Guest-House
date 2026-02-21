@@ -1,136 +1,201 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Reserve – Salphael Guest House</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"/><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"></head>
-<body><header class="site-header"><div class="container header-inner">
-<a class="brand" href="index.html"><img src="assets/logo.svg" class="logo" alt=""><span class="brand-name">Salphael Guest House</span></a>
-<nav class="nav"><a class="nav-link" href="index.html">Home</a>
-<a class="nav-link" href="about.html">About</a>
-<a class="nav-link" href="rooms.html">Rooms</a>
-<a class="nav-link" href="amenities.html">Amenities</a>
-<a class="nav-link" href="gallery.html">Gallery</a>
-<a class="nav-link" href="availability.html">Availability</a>
-<a class="nav-link" href="location.html">Location</a>
-<a class="nav-link active" href="reserve.html">Reserve</a></nav><a class="btn btn-cta" href="reserve.html">Book Now</a>
-<button class="menu-toggle" aria-label="Open menu">☰</button></div></header>
-<div class="mobile-drawer" id="drawer"><nav><a class="nav-link" href="index.html">Home</a>
-<a class="nav-link" href="about.html">About</a>
-<a class="nav-link" href="rooms.html">Rooms</a>
-<a class="nav-link" href="amenities.html">Amenities</a>
-<a class="nav-link" href="gallery.html">Gallery</a>
-<a class="nav-link" href="availability.html">Availability</a>
-<a class="nav-link" href="location.html">Location</a>
-<a class="nav-link active"<a href="reserve.html" class="btn btn-cta">Reserve</a>">Book Now</a></nav></div>
-<main class="page">
-<section class="banner gold"><div class="container"><h1>Reserve Your Stay</h1><p>We’ll confirm promptly via WhatsApp & email.</p></div></section>
-<section class="container section">
-  <form
-  id="reservationForm"
-  action="https://formspree.io/f/mwpnveej"
-  method="POST"
-  novalidate
->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
->
-  <div class="grid three">
+  <title>Reserve – Salphael Guest House</title>
 
-    <label>
-      Full Name
-      <input type="text" name="name" required placeholder="Your full name">
-    </label>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
 
-    <label>
-      Phone Number
-      <input type="tel" name="phone" placeholder="+234…">
-    </label>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo_new.webp" class="logo" alt="Salphael Guest House logo">
+        <span class="brand-name">Salphael Guest House</span>
+      </a>
 
-    <label>
-      Email Address
-      <input type="email" name="email" required placeholder="you@example.com">
-    </label>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="rooms.html">Rooms</a>
+        <a class="nav-link" href="amenities.html">Amenities</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="availability.html">Availability</a>
+        <a class="nav-link" href="location.html">Location</a>
+        <a class="nav-link active" href="reserve.html">Reserve</a>
+      </nav>
 
-    <label>
-      Check-in
-      <input type="date" name="checkin" required>
-    </label>
+      <a class="btn btn-cta" href="reserve.html">Book Now</a>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
 
-    <label>
-      Check-out
-      <input type="date" name="checkout" required>
-    </label>
-
-    <label>
-      Number of Guests
-      <input type="number" name="guests" min="1" max="12" value="2" required>
-    </label>
-
-    <label>
-      Room / Suite
-      <select name="room" required>
-        <option value="">Select room type</option>
-        <option>Standard Room – ₦40,000</option>
-        <option>Deluxe Room – ₦60,000</option>
-        <option>Family Suite (Downstairs) – ₦100,000</option>
-        <option>Family Suite (Upstairs) – ₦120,000</option>
-      </select>
-    </label>
-
-    <label>
-      Special Requests
-      <input type="text" name="notes" placeholder="Airport pickup, early check-in, etc.">
-    </label>
-
+  <div class="mobile-drawer" id="drawer">
+    <nav>
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="rooms.html">Rooms</a>
+      <a class="nav-link" href="amenities.html">Amenities</a>
+      <a class="nav-link" href="gallery.html">Gallery</a>
+      <a class="nav-link" href="availability.html">Availability</a>
+      <a class="nav-link" href="location.html">Location</a>
+      <a class="nav-link active" href="reserve.html">Reserve</a>
+      <a class="btn btn-cta block mt8" href="reserve.html">Book Now</a>
+    </nav>
   </div>
 
-  <div class="cta-row">
-    <button type="submit" class="btn btn-cta">Submit Reservation</button>
-  </div>
-</form>
+  <main class="page">
+    <section class="banner gold">
+      <div class="container">
+        <h1>Reserve Your Stay</h1>
+        <p>We’ll confirm promptly via WhatsApp &amp; email.</p>
+      </div>
+    </section>
+
+    <section class="container section">
+      <form
+        id="reservationForm"
+        action="https://formspree.io/f/mwpnveej"
+        method="POST"
+        novalidate
+      >
+        <div class="grid three">
+          <label>
+            Full Name
+            <input type="text" name="name" required placeholder="Your full name">
+          </label>
+
+          <label>
+            Phone Number
+            <input type="tel" name="phone" placeholder="+234…">
+          </label>
+
+          <label>
+            Email Address
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+
+          <label>
+            Check-in
+            <input type="date" name="checkin" required>
+          </label>
+
+          <label>
+            Check-out
+            <input type="date" name="checkout" required>
+          </label>
+
+          <label>
+            Number of Guests
+            <input type="number" name="guests" min="1" max="12" value="2" required>
+          </label>
+
+          <label>
+            Room / Suite
+            <select name="room" required>
+              <option value="">Select room type</option>
+              <option>Standard Room – ₦40,000</option>
+              <option>Deluxe Room – ₦60,000</option>
+              <option>Family Suite (Downstairs) – ₦100,000</option>
+              <option>Family Suite (Upstairs) – ₦120,000</option>
+            </select>
+          </label>
+
+          <label>
+            Special Requests
+            <input type="text" name="notes" placeholder="Airport pickup, early check-in, etc.">
+          </label>
+        </div>
+
+        <div class="cta-row">
+          <button type="submit" class="btn btn-cta">Submit Reservation</button>
+        </div>
+      </form>
+
+      <div id="formSuccess" class="success-box" style="display:none;">
+        <h3>Reservation Received ✅</h3>
+        <p>
+          Thank you for choosing <strong>Salphael Guest House</strong>.<br>
+          We’ve received your reservation and will contact you shortly by email or phone.
+        </p>
+
+        <p class="tiny">
+          Prefer instant response?
+          <a
+            href="https://api.whatsapp.com/send?phone=2349021173726&text=Hello%20Salphael%20Guest%20House.%20I%20just%20submitted%20a%20reservation%20request%20on%20your%20website.%20Please%20confirm%20availability%20and%20next%20steps."
+            target="_blank"
+            rel="noopener"
+          >Chat with us on WhatsApp</a>
+        </p>
+      </div>
+
+      <script>
+        const form = document.getElementById("reservationForm");
+        const successBox = document.getElementById("formSuccess");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          }).then(response => {
+            if (response.ok) {
+              form.style.display = "none";
+              successBox.style.display = "block";
+              form.reset();
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          }).catch(() => {
+            alert("Network error. Please try again.");
+          });
+        });
+      </script>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-grid">
+      <div>
+        <div class="brand foot">
+          <img src="assets/logo_new.webp" class="logo small" alt="Salphael Guest House logo">
+          <strong>Salphael Guest House</strong>
+        </div>
+        <p>Rayfield, Jos • Nigeria</p>
+        <p>
+          <a
+            href="https://api.whatsapp.com/send?phone=2349021173726&text=Hello%20Salphael%20Guest%20House.%20I%20would%20like%20to%20book%20a%20room.%20Please%20send%20availability%20and%20rates."
+            target="_blank"
+            rel="noopener"
+          >+234 902 117 3726</a>
+        </p>
+      </div>
+
+      <div>
+        <strong>Explore</strong>
+        <div class="foot-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="rooms.html">Rooms</a>
+          <a href="amenities.html">Amenities</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="availability.html">Availability</a>
+          <a href="location.html">Location</a>
+          <a href="reserve.html">Reserve</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="tiny center">© <span id="year"></span> Salphael Guest House. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
-<div id="formSuccess" class="success-box" style="display:none;">
-  <h3>Reservation Received ✅</h3>
-  <p>
-    Thank you for choosing <strong>Salphael Guest House</strong>.<br>
-    We’ve received your reservation and will contact you shortly by email or phone.
-  </p>
-
-  <p class="tiny">
-    Prefer instant response?
-    <a href="https://wa.me/2348035847866" target="_blank">Chat with us on WhatsApp</a>
-  </p>
-</div>
-</form>
-<script>
-const form = document.getElementById("reservationForm");
-const successBox = document.getElementById("formSuccess");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  fetch(form.action, {
-    method: form.method,
-    body: new FormData(form),
-    headers: { "Accept": "application/json" }
-  }).then(response => {
-    if (response.ok) {
-      form.style.display = "none";
-      successBox.style.display = "block";
-      form.reset();
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  });
-});
-</script>
-
-</section>
-</main><footer class="site-footer"><div class="container foot-grid">
-<div><div class="brand foot"><img src="assets/logo.svg" class="logo small" alt=""><strong>Salphael Guest House</strong></div>
-<p>Rayfield, Jos • Nigeria</p><p><<a href="reserve.html" class="btn btn-cta">Reserve</a> target="_blank" rel="noopener">+234 803 584 7866</a></p></div>
-<div><strong>Explore</strong><div class="foot-links">
-<a href="index.html">Home</a><a href="about.html">About</a><a href="rooms.html">Rooms</a><a href="amenities.html">Amenities</a>
-<a href="gallery.html">Gallery</a><a href="availability.html">Availability</a><a href="location.html">Location</a><a href="reserve.html">Reserve</a>
-</div></div></div><p class="tiny center">© <span id="year"></span> Salphael Guest House. All rights reserved.</p></footer>
-<script src="script.js"></script></body></html>
+</html>
